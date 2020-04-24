@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>image</title>
+    <style>
+        .stage {
+                display:flex;
+            margin:100px auto auto auto;
+            width:$width$px;
+            height:$height$px;
+            overflow:hidden;
+        }
+         
+    </style>
+    <script>
+        window.addEventListener('load',
+		function(){
+         //window.attachEvent('load',function(){
+            // 设置图片的地址
+            var imgSrcs = [];
+			for(i =0;i<$imageCount$;i++){
+			imgSrcs.push(i+'.jpg');}
+            // 设置滚动间隔时间(毫秒)
+            var interval = $intervaltime$;
+            var viewer = document.getElementById('viewer');
+            var current = 0;
+            var len = imgSrcs.length;
+            var setImage = function(){
+             
+                viewer.src =imgSrcs[current];
+                current = ++current>len-1? 0 : current;
+             
+            };
+             
+            setImage();
+             
+            setInterval(setImage,interval);
+        });
+    </script>
+</head>
+<body>
+    <div class="stage">
+        <img id="viewer" src="#" alt="">
+    </div>
+</body>
+</html>

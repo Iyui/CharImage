@@ -12,6 +12,7 @@ using System.Collections;
 using System.Threading;
 using Gif.Components;
 using System.Drawing.Drawing2D;
+using LitJson;
 namespace Image2Char
 {
     public partial class Form1 : Form
@@ -61,7 +62,7 @@ namespace Image2Char
         {
             InitializeComponent();
             tb_CharImage.Font = new Font(tb_CharImage.Font.Name, TextFontSize);
-            DisplaySpeed = (tBar_Speed.Maximum - tBar_Speed.Value + 1) * 40;
+            DisplaySpeed = (tBar_Speed.Maximum - tBar_Speed.Value + 1) * 50;
             //charshowCallBack = new CharShowCallBack(ShowGifChar);
             Config.messageClass.OnMessageSend += new MessageEventHandler(SubthreadMessageReceive);
         }
@@ -309,6 +310,7 @@ namespace Image2Char
         {
             //jsGif();
             GenerateHtml();
+            GenerateHtmlChar();
             //MessageBox.Show(BrowserMode.GetBrowserVersion().ToString());
         }
 
@@ -483,6 +485,47 @@ namespace Image2Char
 
         }
 
+        /// <summary>
+        /// 根据模板生成HTML
+        /// </summary>
+        private void GenerateHtmlChar()
+        {
+            HtmlClass htmlClass = new HtmlClass
+            {
+                template = Application.StartupPath + @"\templateC.html",
+                path = ImagePath,
+                htmlname = "indexC.html"
+            };
+            int strCount = htGif.Count;
+
+            string json = JsonData();
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            {
+                dic.Add("array", json);
+                dic.Add("intervaltime", DisplaySpeed.ToString());
+                dic.Add("arrCount", strCount.ToString());
+            }
+            htmlClass.dic = dic;
+            string error = "";
+            string htmlpath = "";
+            htmlClass.Create(ref error, ref htmlpath);
+            if (isBroswerShow)
+                System.Diagnostics.Process.Start(htmlpath);
+        }
+
+        private string JsonData()
+        {
+            JsonData data = new JsonData();
+         
+            for (int i = 0; i < htGif.Count; i++)
+            {
+                data[i.ToString()] = ((string)htGif[i]).Replace("\r\n","<br>");
+            }
+            string content = data.ToJson();
+            return content;
+        }
+
+
         private void pB_HandleProgress_Click(object sender, EventArgs e)
         {
 
@@ -490,7 +533,7 @@ namespace Image2Char
 
         private void tBar_Speed_Scroll(object sender, EventArgs e)
         {
-            DisplaySpeed = (tBar_Speed.Maximum - tBar_Speed.Value + 1) * 40;
+            DisplaySpeed = (tBar_Speed.Maximum - tBar_Speed.Value + 1) * 50;
         }
     }
 }

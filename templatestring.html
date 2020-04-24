@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>char</title>
+   
+    <script>
+        window.addEventListener('load',
+		function(){
+
+            var imgCharSrcs = $array$;
+          
+            var chararr = JSON.parse(imgCharSrcs);
+            // 设置滚动间隔时间(毫秒)
+            var interval = $intervaltime$;
+
+            var current = 0;
+            var len = chararr.length;
+            var setImage = function(){
+                document.getElementById('div1').innerHTML = chararr[current];
+                current = ++current > len - 1 ? 0 : current;             
+            };
+             
+            setImage();
+             
+            setInterval(setImage,interval);
+        });
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

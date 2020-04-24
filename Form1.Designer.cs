@@ -44,33 +44,33 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pB_HandleProgress = new System.Windows.Forms.ProgressBar();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.nub_height = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nud_Height = new System.Windows.Forms.NumericUpDown();
-            this.nud_Width = new System.Windows.Forms.NumericUpDown();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cB_Compress = new System.Windows.Forms.CheckBox();
-            this.cB_OpenFloder = new System.Windows.Forms.CheckBox();
-            this.cB_FormShow = new System.Windows.Forms.CheckBox();
-            this.cB_Parallel = new System.Windows.Forms.CheckBox();
-            this.cB_BrowserShow = new System.Windows.Forms.CheckBox();
-            this.cB_PicShow = new System.Windows.Forms.CheckBox();
-            this.cB_TextShow = new System.Windows.Forms.CheckBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.tBar_Speed = new System.Windows.Forms.TrackBar();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tBar_Speed = new System.Windows.Forms.TrackBar();
+            this.cB_TextShow = new System.Windows.Forms.CheckBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cB_PicShow = new System.Windows.Forms.CheckBox();
+            this.cB_BrowserShow = new System.Windows.Forms.CheckBox();
+            this.nub_height = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cB_FormShow = new System.Windows.Forms.CheckBox();
+            this.nud_Height = new System.Windows.Forms.NumericUpDown();
+            this.nud_Width = new System.Windows.Forms.NumericUpDown();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.cB_Compress = new System.Windows.Forms.CheckBox();
+            this.cB_OpenFloder = new System.Windows.Forms.CheckBox();
+            this.cB_Parallel = new System.Windows.Forms.CheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CharSize)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -82,17 +82,6 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_Height)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_Width)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tBar_Speed)).BeginInit();
-            this.tabControl2.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
@@ -100,8 +89,19 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tBar_Speed)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Height)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Width)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -120,7 +120,7 @@
             this.tb_CharImage.Location = new System.Drawing.Point(3, 3);
             this.tb_CharImage.Multiline = true;
             this.tb_CharImage.Name = "tb_CharImage";
-            this.tb_CharImage.Size = new System.Drawing.Size(761, 690);
+            this.tb_CharImage.Size = new System.Drawing.Size(777, 743);
             this.tb_CharImage.TabIndex = 1;
             // 
             // btn_SelectImage
@@ -203,7 +203,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(767, 696);
+            this.tabPage1.Size = new System.Drawing.Size(783, 749);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -214,7 +214,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(767, 696);
+            this.tabPage3.Size = new System.Drawing.Size(783, 749);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -225,7 +225,7 @@
             this.webBrowser1.Location = new System.Drawing.Point(3, 3);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(761, 690);
+            this.webBrowser1.Size = new System.Drawing.Size(777, 743);
             this.webBrowser1.TabIndex = 0;
             this.webBrowser1.Url = new System.Uri("", System.UriKind.Relative);
             // 
@@ -247,7 +247,6 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "打开所在目录";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pB_HandleProgress
@@ -279,28 +278,59 @@
             this.splitContainer1.SplitterDistance = 791;
             this.splitContainer1.TabIndex = 10;
             // 
-            // groupBox4
+            // splitContainer2
             // 
-            this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Controls.Add(this.pB_HandleProgress);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(0, 0);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(253, 76);
-            this.groupBox4.TabIndex = 9;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "转换进度";
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // groupBox3
+            // splitContainer2.Panel2
             // 
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.tBar_CharSize);
-            this.groupBox3.Location = new System.Drawing.Point(8, 162);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(215, 71);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "字体大小";
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
+            this.splitContainer2.Size = new System.Drawing.Size(253, 775);
+            this.splitContainer2.SplitterDistance = 285;
+            this.splitContainer2.TabIndex = 11;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.tabControl2);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.groupBox4);
+            this.splitContainer3.Size = new System.Drawing.Size(253, 486);
+            this.splitContainer3.SplitterDistance = 406;
+            this.splitContainer3.TabIndex = 11;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage5);
+            this.tabControl2.Controls.Add(this.tabPage6);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(0, 0);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(253, 406);
+            this.tabControl2.TabIndex = 10;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.groupBox2);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(245, 380);
+            this.tabPage5.TabIndex = 0;
+            this.tabPage5.Text = "显示";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -322,6 +352,93 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "显示";
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label5);
+            this.groupBox5.Controls.Add(this.tBar_Speed);
+            this.groupBox5.Location = new System.Drawing.Point(8, 233);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(209, 71);
+            this.groupBox5.TabIndex = 13;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "播放速度";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(192, 29);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 12);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "快";
+            // 
+            // tBar_Speed
+            // 
+            this.tBar_Speed.Location = new System.Drawing.Point(6, 20);
+            this.tBar_Speed.Maximum = 20;
+            this.tBar_Speed.Minimum = 1;
+            this.tBar_Speed.Name = "tBar_Speed";
+            this.tBar_Speed.Size = new System.Drawing.Size(180, 45);
+            this.tBar_Speed.TabIndex = 4;
+            this.tBar_Speed.Value = 20;
+            this.tBar_Speed.Scroll += new System.EventHandler(this.tBar_Speed_Scroll);
+            // 
+            // cB_TextShow
+            // 
+            this.cB_TextShow.AutoSize = true;
+            this.cB_TextShow.Checked = true;
+            this.cB_TextShow.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cB_TextShow.Location = new System.Drawing.Point(8, 20);
+            this.cB_TextShow.Name = "cB_TextShow";
+            this.cB_TextShow.Size = new System.Drawing.Size(108, 16);
+            this.cB_TextShow.TabIndex = 12;
+            this.cB_TextShow.Text = "转换为文字显示";
+            this.cB_TextShow.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.tBar_CharSize);
+            this.groupBox3.Location = new System.Drawing.Point(8, 162);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(215, 71);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "字体大小";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(192, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 12);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "大";
+            // 
+            // cB_PicShow
+            // 
+            this.cB_PicShow.AutoSize = true;
+            this.cB_PicShow.Checked = true;
+            this.cB_PicShow.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cB_PicShow.Location = new System.Drawing.Point(8, 42);
+            this.cB_PicShow.Name = "cB_PicShow";
+            this.cB_PicShow.Size = new System.Drawing.Size(132, 16);
+            this.cB_PicShow.TabIndex = 11;
+            this.cB_PicShow.Text = "文字转换为图片显示";
+            this.cB_PicShow.UseVisualStyleBackColor = true;
+            // 
+            // cB_BrowserShow
+            // 
+            this.cB_BrowserShow.AutoSize = true;
+            this.cB_BrowserShow.Checked = true;
+            this.cB_BrowserShow.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cB_BrowserShow.Location = new System.Drawing.Point(8, 64);
+            this.cB_BrowserShow.Name = "cB_BrowserShow";
+            this.cB_BrowserShow.Size = new System.Drawing.Size(96, 16);
+            this.cB_BrowserShow.TabIndex = 8;
+            this.cB_BrowserShow.Text = "浏览器中显示";
+            this.cB_BrowserShow.UseVisualStyleBackColor = true;
+            // 
             // nub_height
             // 
             this.nub_height.AutoSize = true;
@@ -339,6 +456,18 @@
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 6;
             this.label2.Text = "宽度px：";
+            // 
+            // cB_FormShow
+            // 
+            this.cB_FormShow.AutoSize = true;
+            this.cB_FormShow.Checked = true;
+            this.cB_FormShow.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cB_FormShow.Location = new System.Drawing.Point(8, 86);
+            this.cB_FormShow.Name = "cB_FormShow";
+            this.cB_FormShow.Size = new System.Drawing.Size(84, 16);
+            this.cB_FormShow.TabIndex = 1;
+            this.cB_FormShow.Text = "窗体中显示";
+            this.cB_FormShow.UseVisualStyleBackColor = true;
             // 
             // nud_Height
             // 
@@ -384,6 +513,17 @@
             0,
             0});
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.groupBox1);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(245, 380);
+            this.tabPage6.TabIndex = 1;
+            this.tabPage6.Text = "设置";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
@@ -397,191 +537,6 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "设置";
-            // 
-            // cB_Compress
-            // 
-            this.cB_Compress.AutoSize = true;
-            this.cB_Compress.Checked = true;
-            this.cB_Compress.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cB_Compress.Location = new System.Drawing.Point(8, 20);
-            this.cB_Compress.Name = "cB_Compress";
-            this.cB_Compress.Size = new System.Drawing.Size(72, 16);
-            this.cB_Compress.TabIndex = 3;
-            this.cB_Compress.Text = "图像压缩";
-            this.cB_Compress.UseVisualStyleBackColor = true;
-            // 
-            // cB_OpenFloder
-            // 
-            this.cB_OpenFloder.AutoSize = true;
-            this.cB_OpenFloder.Location = new System.Drawing.Point(8, 148);
-            this.cB_OpenFloder.Name = "cB_OpenFloder";
-            this.cB_OpenFloder.Size = new System.Drawing.Size(144, 16);
-            this.cB_OpenFloder.TabIndex = 2;
-            this.cB_OpenFloder.Text = "完成后打开所在文件夹";
-            this.cB_OpenFloder.UseVisualStyleBackColor = true;
-            // 
-            // cB_FormShow
-            // 
-            this.cB_FormShow.AutoSize = true;
-            this.cB_FormShow.Checked = true;
-            this.cB_FormShow.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cB_FormShow.Location = new System.Drawing.Point(8, 86);
-            this.cB_FormShow.Name = "cB_FormShow";
-            this.cB_FormShow.Size = new System.Drawing.Size(84, 16);
-            this.cB_FormShow.TabIndex = 1;
-            this.cB_FormShow.Text = "窗体中显示";
-            this.cB_FormShow.UseVisualStyleBackColor = true;
-            // 
-            // cB_Parallel
-            // 
-            this.cB_Parallel.AutoSize = true;
-            this.cB_Parallel.Location = new System.Drawing.Point(8, 126);
-            this.cB_Parallel.Name = "cB_Parallel";
-            this.cB_Parallel.Size = new System.Drawing.Size(150, 16);
-            this.cB_Parallel.TabIndex = 0;
-            this.cB_Parallel.Text = "并行处理（高CPU占用）";
-            this.cB_Parallel.UseVisualStyleBackColor = true;
-            // 
-            // cB_BrowserShow
-            // 
-            this.cB_BrowserShow.AutoSize = true;
-            this.cB_BrowserShow.Checked = true;
-            this.cB_BrowserShow.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cB_BrowserShow.Location = new System.Drawing.Point(8, 64);
-            this.cB_BrowserShow.Name = "cB_BrowserShow";
-            this.cB_BrowserShow.Size = new System.Drawing.Size(96, 16);
-            this.cB_BrowserShow.TabIndex = 8;
-            this.cB_BrowserShow.Text = "浏览器中显示";
-            this.cB_BrowserShow.UseVisualStyleBackColor = true;
-            // 
-            // cB_PicShow
-            // 
-            this.cB_PicShow.AutoSize = true;
-            this.cB_PicShow.Checked = true;
-            this.cB_PicShow.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cB_PicShow.Location = new System.Drawing.Point(8, 42);
-            this.cB_PicShow.Name = "cB_PicShow";
-            this.cB_PicShow.Size = new System.Drawing.Size(132, 16);
-            this.cB_PicShow.TabIndex = 11;
-            this.cB_PicShow.Text = "文字转换为图片显示";
-            this.cB_PicShow.UseVisualStyleBackColor = true;
-            // 
-            // cB_TextShow
-            // 
-            this.cB_TextShow.AutoSize = true;
-            this.cB_TextShow.Checked = true;
-            this.cB_TextShow.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cB_TextShow.Location = new System.Drawing.Point(8, 20);
-            this.cB_TextShow.Name = "cB_TextShow";
-            this.cB_TextShow.Size = new System.Drawing.Size(108, 16);
-            this.cB_TextShow.TabIndex = 12;
-            this.cB_TextShow.Text = "转换为文字显示";
-            this.cB_TextShow.UseVisualStyleBackColor = true;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Controls.Add(this.tBar_Speed);
-            this.groupBox5.Location = new System.Drawing.Point(8, 233);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(209, 71);
-            this.groupBox5.TabIndex = 13;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "播放速度";
-            // 
-            // tBar_Speed
-            // 
-            this.tBar_Speed.Location = new System.Drawing.Point(6, 20);
-            this.tBar_Speed.Maximum = 20;
-            this.tBar_Speed.Minimum = 1;
-            this.tBar_Speed.Name = "tBar_Speed";
-            this.tBar_Speed.Size = new System.Drawing.Size(180, 45);
-            this.tBar_Speed.TabIndex = 4;
-            this.tBar_Speed.Value = 20;
-            this.tBar_Speed.Scroll += new System.EventHandler(this.tBar_Speed_Scroll);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(192, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 12);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "大";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(192, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 12);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "快";
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Location = new System.Drawing.Point(0, 0);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(253, 406);
-            this.tabControl2.TabIndex = 10;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.groupBox2);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(245, 380);
-            this.tabPage5.TabIndex = 0;
-            this.tabPage5.Text = "显示";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.groupBox1);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(245, 380);
-            this.tabPage6.TabIndex = 1;
-            this.tabPage6.Text = "设置";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(253, 775);
-            this.splitContainer2.SplitterDistance = 285;
-            this.splitContainer2.TabIndex = 11;
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.tabControl2);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.groupBox4);
-            this.splitContainer3.Size = new System.Drawing.Size(253, 486);
-            this.splitContainer3.SplitterDistance = 406;
-            this.splitContainer3.TabIndex = 11;
             // 
             // groupBox6
             // 
@@ -612,6 +567,50 @@
             this.trackBar1.TabIndex = 4;
             this.trackBar1.Value = 95;
             // 
+            // cB_Compress
+            // 
+            this.cB_Compress.AutoSize = true;
+            this.cB_Compress.Checked = true;
+            this.cB_Compress.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cB_Compress.Location = new System.Drawing.Point(8, 20);
+            this.cB_Compress.Name = "cB_Compress";
+            this.cB_Compress.Size = new System.Drawing.Size(72, 16);
+            this.cB_Compress.TabIndex = 3;
+            this.cB_Compress.Text = "图像压缩";
+            this.cB_Compress.UseVisualStyleBackColor = true;
+            // 
+            // cB_OpenFloder
+            // 
+            this.cB_OpenFloder.AutoSize = true;
+            this.cB_OpenFloder.Location = new System.Drawing.Point(8, 148);
+            this.cB_OpenFloder.Name = "cB_OpenFloder";
+            this.cB_OpenFloder.Size = new System.Drawing.Size(144, 16);
+            this.cB_OpenFloder.TabIndex = 2;
+            this.cB_OpenFloder.Text = "完成后打开所在文件夹";
+            this.cB_OpenFloder.UseVisualStyleBackColor = true;
+            // 
+            // cB_Parallel
+            // 
+            this.cB_Parallel.AutoSize = true;
+            this.cB_Parallel.Location = new System.Drawing.Point(8, 126);
+            this.cB_Parallel.Name = "cB_Parallel";
+            this.cB_Parallel.Size = new System.Drawing.Size(150, 16);
+            this.cB_Parallel.TabIndex = 0;
+            this.cB_Parallel.Text = "并行处理（高CPU占用）";
+            this.cB_Parallel.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.pB_HandleProgress);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(0, 0);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(253, 76);
+            this.groupBox4.TabIndex = 9;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "转换进度";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -632,22 +631,6 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_Height)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_Width)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tBar_Speed)).EndInit();
-            this.tabControl2.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage6.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
@@ -655,9 +638,25 @@
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tBar_Speed)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Height)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Width)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
