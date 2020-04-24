@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>silde image demo</title>
+    <style>
+        e79fa5e98193e58685e5aeb931333337383934.stage {
+                display:flex;
+            margin:100px auto auto auto;
+            width:400px;
+            height:400px;
+            overflow:hidden;
+        }
+         
+    </style>
+    <script>
+        window.addEventListener('load',function(){
+         
+            // 设置3个图片的地址
+            var imgSrcs = [];
+			for(i =0;i<100;i++){
+			imgSrcs.push(i+'.jpg');}
+            // 设置滚动间隔时间(毫秒)
+            var interval = 100;
+            var viewer = document.getElementById('viewer');
+            var current = 0;
+            var len = imgSrcs.length;
+            var setImage = function(){
+             
+                viewer.src = imgSrcs[current];
+                current = ++current>len-1? 0 : current;
+             
+            };
+             
+            setImage();
+             
+            setInterval(setImage,interval);
+             
+         
+        });
+    </script>
+</head>
+<body>
+    <div class="stage">
+        <img id="viewer" src="#" alt="">
+    </div>
+</body>
+</html>

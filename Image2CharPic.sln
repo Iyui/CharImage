@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Image2Char", "Image2Char.csproj", "{EB26B17D-6D0C-4C00-B45F-C1FBE6A20BA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB26B17D-6D0C-4C00-B45F-C1FBE6A20BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB26B17D-6D0C-4C00-B45F-C1FBE6A20BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB26B17D-6D0C-4C00-B45F-C1FBE6A20BA1}.Debug|x64.ActiveCfg = Debug|x64
+		{EB26B17D-6D0C-4C00-B45F-C1FBE6A20BA1}.Debug|x64.Build.0 = Debug|x64
+		{EB26B17D-6D0C-4C00-B45F-C1FBE6A20BA1}.Debug|x86.ActiveCfg = Debug|x86
+		{EB26B17D-6D0C-4C00-B45F-C1FBE6A20BA1}.Debug|x86.Build.0 = Debug|x86
+		{EB26B17D-6D0C-4C00-B45F-C1FBE6A20BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB26B17D-6D0C-4C00-B45F-C1FBE6A20BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB26B17D-6D0C-4C00-B45F-C1FBE6A20BA1}.Release|x64.ActiveCfg = Release|x64
+		{EB26B17D-6D0C-4C00-B45F-C1FBE6A20BA1}.Release|x64.Build.0 = Release|x64
+		{EB26B17D-6D0C-4C00-B45F-C1FBE6A20BA1}.Release|x86.ActiveCfg = Release|x86
+		{EB26B17D-6D0C-4C00-B45F-C1FBE6A20BA1}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2662C727-983C-4778-9B04-159C882099DA}
+	EndGlobalSection
+EndGlobal
