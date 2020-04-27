@@ -563,7 +563,9 @@ namespace Image2Char
          
             for (int i = 0; i < htGif.Count; i++)
             {
-                data[i.ToString()] = ((string)htGif[i]).Replace("\r\n","<br>");
+                var rep = ((string)htGif[i]).Replace(" ", "&nbsp");
+                rep = rep.Replace("\r\n", "<br>");
+                data[i.ToString()] = rep;
             }
             string content = data.ToJson();
             return content;
