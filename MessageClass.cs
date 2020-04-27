@@ -15,6 +15,7 @@ namespace Image2Char
         Error,
         Progress,
         ImageInfo,
+        PrgressInfo,
     }
 
     public class MessageEventArgs : EventArgs
@@ -24,6 +25,7 @@ namespace Image2Char
         public String Message; //传递字符串信息
         public float Progress;
         public Image imageinfo;
+        public string PrgressInfo;
         public MessageEventArgs(object obj, MessageType type)
         {
             this.oMessage = obj;
@@ -32,6 +34,7 @@ namespace Image2Char
 
         public MessageEventArgs(string message, MessageType type = MessageType.Message)
         {
+            PrgressInfo = message;
             this.Message = message;
             this.messageType = type;
         }

@@ -27,6 +27,8 @@ namespace Image2Char
 
         protected List<Image> imageList;
 
+        Thread td;
+
         //protected delegate void CharShowCallBack(string s);
         //private CharShowCallBack charshowCallBack;
 
@@ -50,6 +52,7 @@ namespace Image2Char
         /// </summary>
         public bool ImageCompress { set; get; }
 
+        public static bool isContinue { set; get; }
         public int CompressRate { set; get; }
         /// <summary>
         /// 图片显示在浏览器中的宽度
@@ -60,6 +63,7 @@ namespace Image2Char
 
         public float TextFontSize { get => tBar_CharSize.Value; }
         public static int DisplaySpeed { set; get; }
+        public static bool isGenerateGif { set; get; }
 
         public Form1()
         {
@@ -90,14 +94,21 @@ namespace Image2Char
 
                     break;
                 case MessageType.Progress:
-                    label1.Text = e.Progress.ToString();
-                    if (e.Progress > 100)
+                    label1.Text = e.Progress.ToString("0.000");
+                    if (e.Progress >= 100)
+                    {
                         pB_HandleProgress.Value = 100;
+                        btn_SelectImage.Enabled = true;
+                    }
                     else
                         pB_HandleProgress.Value = (int)e.Progress;
                     break;
                 case MessageType.ImageInfo:
                     pB_CharGif.Image = e.imageinfo;
+                    //pB_CharGif.Refresh();
+                    break;
+                case MessageType.PrgressInfo:
+                    lInfo.Text = e.PrgressInfo;
                     //pB_CharGif.Refresh();
                     break;
             }
@@ -148,6 +159,8 @@ namespace Image2Char
             return sb;
         }
 
+
+
         private void bt_SelectImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog oi = new OpenFileDialog
@@ -159,6 +172,12 @@ namespace Image2Char
             };
             if (oi.ShowDialog() == DialogResult.OK)
             {
+                while (!(td is null) && td.IsAlive)
+                {
+                    ShowInfo("初始化");
+                    isContinue = false;
+                    Thread.Sleep(1);
+                }
                 var filename = oi.FileName;
                 ImageName = Path.GetFileNameWithoutExtension(filename);
                 if (Path.GetExtension(filename).ToLower() == ".gif")
@@ -173,7 +192,8 @@ namespace Image2Char
                     image = Image.FromFile(filename);
                     bitmap = new Bitmap(image);
                     pictureBox1.Image = image;
-                    model = 1;
+                    GetFrames(filename);
+                    model = 2;
                 }
             }
         }
@@ -181,7 +201,10 @@ namespace Image2Char
         private void bt_Change_Click(object sender, EventArgs e)
         {
             ImageCompress = cB_Compress.Checked;
-            Thread td = new Thread(HandleImage)
+            btn_SelectImage.Enabled = false;
+            if (!(td is null) && td.IsAlive)
+                isContinue = false;
+            td = new Thread(HandleImage)
             {
                 IsBackground = true
             };
@@ -233,6 +256,7 @@ namespace Image2Char
 
         private void GetGifChar(int w, int h)
         {
+            ShowInfo("正在解析GIF");
             int count = imageList.Count;
             float perProgress = ((100.0f - Progress) / count / 2);
             for (int i = 0; i < count; i++)
@@ -254,12 +278,15 @@ namespace Image2Char
             //    Image img = Image.FromHbitmap(bp.GetHbitmap());
             //    im.Add(img);
             //}
-            while (true)
+            isContinue = true;
+            while (isContinue)
             {
                 if (isFormShow )
                 {
                     for (int i = 0; i < htCharToBmp.Count; i++)
                     {
+                        if (!isContinue)
+                            break;
                         if (isPicShow)
                             ShowMessage((Image)htCharToBmp[i]);
                         if (isTextShow)
@@ -269,7 +296,7 @@ namespace Image2Char
                 }
                 Thread.Sleep(1);
             }
-
+            ShowInfo("");
         }
 
         private void HandleImage()
@@ -283,11 +310,12 @@ namespace Image2Char
                     var sb = ConvertToChar(bitmap, WAddNum, HAddNum);
                     //Write(sb, Application.StartupPath+"\\1.txt");
                     ShowMessage(sb.ToString(), MessageType.Message);
+                    ShowMessage(100.00f);
                     break;
                 case 2://gif动态图
                     GetGifChar(WAddNum, HAddNum);
                     TextToBitmap();
-                    //ImageToGif();
+                    ImageToGif();
                     GenerateHtml();
                     GenerateHtmlChar();
                     ShowMessage(100.00f);
@@ -313,12 +341,18 @@ namespace Image2Char
             Config.messageClass.MessageSend(new MessageEventArgs(mes, mt));
         }
 
+        private void ShowInfo(string mes)
+        {
+            Config.messageClass.MessageSend(new MessageEventArgs(mes,MessageType.PrgressInfo));
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             //jsGif();
-            GenerateHtml();
-            GenerateHtmlChar();
+            //GenerateHtml();
+            //GenerateHtmlChar();
             //MessageBox.Show(BrowserMode.GetBrowserVersion().ToString());
+            System.Diagnostics.Process.Start("explorer.exe", Application.StartupPath + "\\" + "resource" + "\\");
         }
 
         /// <summary>
@@ -400,6 +434,7 @@ namespace Image2Char
         /// </summary>
         private void TextToBitmap()
         {
+            ShowInfo("正在进行字符化处理");
             int count = htGif.Count;
             float perProgress = ((100.0f - Progress) / count);
             htCharToBmp = new Hashtable();
@@ -443,34 +478,34 @@ namespace Image2Char
         /// </summary>
         private void ImageToGif()
         {
+            if (!isGenerateGif)
+                return;
             AnimatedGifEncoder e = new AnimatedGifEncoder();
-            var path = Application.StartupPath + "\\" + ImageName + ".gif";
+            var path = HtmlPath+"\\" +ImageName+ ".gif";
             FileStream fileStream = new FileStream(path, FileMode.Create);
             //MemoryStream stream = new MemoryStream();
             e.Start(fileStream);
             e.SetDelay(20);
             e.SetRepeat(0);
             for (int i = 0; i < htCharToBmp.Count; i++)
+            {
                 e.AddFrame((Image)htCharToBmp[i]);//imageList[i]);
+                ShowInfo($"剩余:{htCharToBmp.Count-1}");
+            }
             e.Finish();
-            var image = Image.FromFile(path);
-            ShowMessage(image);
+            //var image = Image.FromFile(path);
+            //ShowMessage(image);
         }
 
 
-        private void jsGif()
-        {
-            string path = ImagePath + @"\index.html";
-            webBrowser1.Navigate(new Uri(path, UriKind.Absolute));
-            //webKitBrowser1.Navigate("https://www.baidu.com");
-            System.Diagnostics.Process.Start(path);
-        }
+ 
 
         /// <summary>
         /// 根据模板生成HTML
         /// </summary>
         private void GenerateHtml()
         {
+            ShowInfo("正在生成HTML");
             HtmlClass htmlClass = new HtmlClass
             {
                 template = Application.StartupPath + @"\template.html",
@@ -586,6 +621,11 @@ namespace Image2Char
         private void cB_Compress_CheckedChanged(object sender, EventArgs e)
         {
             tb_CompressRate.Enabled = cB_Compress.Checked;
+        }
+
+        private void cb_GeneGif_CheckedChanged(object sender, EventArgs e)
+        {
+            isGenerateGif = cb_GeneGif.Checked;
         }
     }
 }

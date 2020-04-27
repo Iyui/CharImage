@@ -70,6 +70,8 @@
             this.cB_Parallel = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.lInfo = new System.Windows.Forms.Label();
+            this.cb_GeneGif = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CharSize)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -81,6 +83,7 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
@@ -133,7 +136,7 @@
             // 
             // btn_Change
             // 
-            this.btn_Change.Location = new System.Drawing.Point(166, 252);
+            this.btn_Change.Location = new System.Drawing.Point(155, 254);
             this.btn_Change.Name = "btn_Change";
             this.btn_Change.Size = new System.Drawing.Size(75, 23);
             this.btn_Change.TabIndex = 3;
@@ -237,7 +240,6 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel2.Controls.Add(this.btn_SelectImage);
-            this.splitContainer1.Panel2.Controls.Add(this.btn_Change);
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(1048, 775);
             this.splitContainer1.SplitterDistance = 791;
@@ -249,6 +251,10 @@
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.btn_Change);
             // 
             // splitContainer2.Panel2
             // 
@@ -407,20 +413,22 @@
             // nub_height
             // 
             this.nub_height.AutoSize = true;
-            this.nub_height.Location = new System.Drawing.Point(6, 137);
+            this.nub_height.Location = new System.Drawing.Point(7, 137);
             this.nub_height.Name = "nub_height";
             this.nub_height.Size = new System.Drawing.Size(53, 12);
             this.nub_height.TabIndex = 7;
             this.nub_height.Text = "高度px：";
+            this.nub_height.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 110);
+            this.label2.Location = new System.Drawing.Point(7, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 6;
             this.label2.Text = "宽度px：";
+            this.label2.Visible = false;
             // 
             // cB_FormShow
             // 
@@ -436,7 +444,7 @@
             // 
             // nud_Height
             // 
-            this.nud_Height.Location = new System.Drawing.Point(65, 135);
+            this.nud_Height.Location = new System.Drawing.Point(66, 135);
             this.nud_Height.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -455,10 +463,11 @@
             0,
             0,
             0});
+            this.nud_Height.Visible = false;
             // 
             // nud_Width
             // 
-            this.nud_Width.Location = new System.Drawing.Point(65, 108);
+            this.nud_Width.Location = new System.Drawing.Point(66, 108);
             this.nud_Width.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -477,6 +486,7 @@
             0,
             0,
             0});
+            this.nud_Width.Visible = false;
             // 
             // tabPage6
             // 
@@ -491,6 +501,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cb_GeneGif);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
@@ -513,6 +524,7 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "测试";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox6
@@ -564,7 +576,7 @@
             this.cB_OpenFloder.AutoSize = true;
             this.cB_OpenFloder.Checked = true;
             this.cB_OpenFloder.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cB_OpenFloder.Location = new System.Drawing.Point(8, 148);
+            this.cB_OpenFloder.Location = new System.Drawing.Point(8, 185);
             this.cB_OpenFloder.Name = "cB_OpenFloder";
             this.cB_OpenFloder.Size = new System.Drawing.Size(144, 16);
             this.cB_OpenFloder.TabIndex = 2;
@@ -574,7 +586,7 @@
             // cB_Parallel
             // 
             this.cB_Parallel.AutoSize = true;
-            this.cB_Parallel.Location = new System.Drawing.Point(8, 126);
+            this.cB_Parallel.Location = new System.Drawing.Point(8, 163);
             this.cB_Parallel.Name = "cB_Parallel";
             this.cB_Parallel.Size = new System.Drawing.Size(150, 16);
             this.cB_Parallel.TabIndex = 0;
@@ -583,6 +595,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lInfo);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.pB_HandleProgress);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -596,14 +609,33 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(8, 170);
+            this.checkBox1.Location = new System.Drawing.Point(8, 141);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(48, 16);
             this.checkBox1.TabIndex = 11;
             this.checkBox1.Text = "水印";
             this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // lInfo
+            // 
+            this.lInfo.AutoSize = true;
+            this.lInfo.Location = new System.Drawing.Point(18, 55);
+            this.lInfo.Name = "lInfo";
+            this.lInfo.Size = new System.Drawing.Size(0, 12);
+            this.lInfo.TabIndex = 6;
+            // 
+            // cb_GeneGif
+            // 
+            this.cb_GeneGif.AutoSize = true;
+            this.cb_GeneGif.Checked = true;
+            this.cb_GeneGif.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_GeneGif.Location = new System.Drawing.Point(8, 119);
+            this.cb_GeneGif.Name = "cb_GeneGif";
+            this.cb_GeneGif.Size = new System.Drawing.Size(66, 16);
+            this.cb_GeneGif.TabIndex = 12;
+            this.cb_GeneGif.Text = "生成GIF";
+            this.cb_GeneGif.UseVisualStyleBackColor = true;
+            this.cb_GeneGif.CheckedChanged += new System.EventHandler(this.cb_GeneGif_CheckedChanged);
             // 
             // Form1
             // 
@@ -624,6 +656,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
@@ -697,6 +730,8 @@
         private System.Windows.Forms.TrackBar tb_CompressRate;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label lInfo;
+        private System.Windows.Forms.CheckBox cb_GeneGif;
     }
 }
 
