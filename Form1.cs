@@ -27,8 +27,8 @@ namespace Image2Char
 
         protected List<Image> imageList;
 
-        protected delegate void CharShowCallBack(string s);
-        private CharShowCallBack charshowCallBack;
+        //protected delegate void CharShowCallBack(string s);
+        //private CharShowCallBack charshowCallBack;
 
         public float Progress { get => float.Parse(label1.Text); }
         public string ImageName { set; get; }
@@ -43,11 +43,14 @@ namespace Image2Char
         /// </summary>
         public string ImagePath { set; get; }
 
+        public string HtmlPath { set; get; }
+
         /// <summary>
         /// 是否压缩图像
         /// </summary>
         public bool ImageCompress { set; get; }
 
+        public int CompressRate { set; get; }
         /// <summary>
         /// 图片显示在浏览器中的宽度
         /// </summary>
@@ -62,6 +65,8 @@ namespace Image2Char
         {
             InitializeComponent();
             tb_CharImage.Font = new Font(tb_CharImage.Font.Name, TextFontSize);
+            CompressRate = 100 - tb_CompressRate.Value;
+
             DisplaySpeed = (tBar_Speed.Maximum - tBar_Speed.Value + 1) * 50;
             //charshowCallBack = new CharShowCallBack(ShowGifChar);
             Config.messageClass.OnMessageSend += new MessageEventHandler(SubthreadMessageReceive);
@@ -284,8 +289,10 @@ namespace Image2Char
                     TextToBitmap();
                     //ImageToGif();
                     GenerateHtml();
+                    GenerateHtmlChar();
                     ShowMessage(100.00f);
-                        ShowGifChar();
+                    OpenFloder();
+                    ShowGifChar();
                     break;
 
             }
@@ -354,7 +361,7 @@ namespace Image2Char
             g.FillRectangle(new SolidBrush(backColor), rect);
             g.DrawString(text, font, Brushes.Black, rect, format);
             if(ImageCompress)
-                bmp = KiResizeImage(bmp, 10);
+                bmp = KiResizeImage(bmp,CompressRate);
             return bmp;
         }
 
@@ -396,15 +403,19 @@ namespace Image2Char
             int count = htGif.Count;
             float perProgress = ((100.0f - Progress) / count);
             htCharToBmp = new Hashtable();
-            var path = Application.StartupPath + "\\" + ImageName + "\\" + "resource" + "\\";
+            var path = Application.StartupPath + "\\" + "resource" + "\\" + ImageName + "\\"+"image"+"\\";
             ImagePath = path;
+            HtmlPath = Application.StartupPath + "\\" + "resource" + "\\" + ImageName;
+
             if (!FloderExist(path))
             {
 
             }
             for (int i = 0; i < count; i++)
             {
-                var val = TextToBitmap((string)htGif[i], tb_CharImage.Font, Rectangle.Empty, tb_CharImage.ForeColor, tb_CharImage.BackColor);
+                var val = TextToBitmap((string)htGif[i], new Font(tb_CharImage.Font.Name, 12), Rectangle.Empty, tb_CharImage.ForeColor, tb_CharImage.BackColor);
+                if (val == null)
+                    continue;
                 path = ImagePath;
                 path += i + ".jpg";
                 val.Save(path);
@@ -412,8 +423,6 @@ namespace Image2Char
                 ShowMessage(Progress + perProgress);
             }
         }
-
-   
 
 
         private bool FloderExist(string path)
@@ -452,7 +461,7 @@ namespace Image2Char
         private void jsGif()
         {
             string path = ImagePath + @"\index.html";
-            webBrowser1.Navigate(new System.Uri(path, UriKind.Absolute));
+            webBrowser1.Navigate(new Uri(path, UriKind.Absolute));
             //webKitBrowser1.Navigate("https://www.baidu.com");
             System.Diagnostics.Process.Start(path);
         }
@@ -465,7 +474,7 @@ namespace Image2Char
             HtmlClass htmlClass = new HtmlClass
             {
                 template = Application.StartupPath + @"\template.html",
-                path = ImagePath,
+                path = HtmlPath,
                 htmlname = "index.html"
             };
             Dictionary<string, string> dic = new Dictionary<string, string>();
@@ -493,7 +502,7 @@ namespace Image2Char
             HtmlClass htmlClass = new HtmlClass
             {
                 template = Application.StartupPath + @"\templateC.html",
-                path = ImagePath,
+                path = HtmlPath,
                 htmlname = "indexC.html"
             };
             int strCount = htGif.Count;
@@ -534,6 +543,49 @@ namespace Image2Char
         private void tBar_Speed_Scroll(object sender, EventArgs e)
         {
             DisplaySpeed = (tBar_Speed.Maximum - tBar_Speed.Value + 1) * 50;
+        }
+
+        private void OpenFloder()
+        {
+            if(isOpenFloder)
+                System.Diagnostics.Process.Start("explorer.exe", ImagePath);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            JsonData data = new JsonData();
+
+
+            data["1"] = "1 2 3 44444      5\r\n5";
+            HtmlClass htmlClass = new HtmlClass
+            {
+                template = Application.StartupPath + @"\templateT.html",
+                path = Application.StartupPath,
+                htmlname = "indexT.html"
+            };
+      
+
+            string json = data.ToJson();
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            {
+                dic.Add("array", json);
+                dic.Add("intervaltime", "1 2 3 44444      5\r\n5");
+            }
+            htmlClass.dic = dic;
+            string error = "";
+            string htmlpath = "";
+            htmlClass.Create(ref error, ref htmlpath);
+        }
+
+        private void tb_CompressRate_Scroll(object sender, EventArgs e)
+        {
+            CompressRate = 100 - tb_CompressRate.Value;
+            label6.Text = tb_CompressRate.Value+"%";
+        }
+
+        private void cB_Compress_CheckedChanged(object sender, EventArgs e)
+        {
+            tb_CompressRate.Enabled = cB_Compress.Checked;
         }
     }
 }

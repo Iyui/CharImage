@@ -38,9 +38,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pB_CharGif = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.pB_HandleProgress = new System.Windows.Forms.ProgressBar();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -64,20 +61,21 @@
             this.nud_Width = new System.Windows.Forms.NumericUpDown();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.tb_CompressRate = new System.Windows.Forms.TrackBar();
             this.cB_Compress = new System.Windows.Forms.CheckBox();
             this.cB_OpenFloder = new System.Windows.Forms.CheckBox();
             this.cB_Parallel = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CharSize)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pB_CharGif)).BeginInit();
             this.tabPage1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -100,7 +98,7 @@
             this.tabPage6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_CompressRate)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,7 +149,7 @@
             this.tBar_CharSize.Name = "tBar_CharSize";
             this.tBar_CharSize.Size = new System.Drawing.Size(183, 45);
             this.tBar_CharSize.TabIndex = 4;
-            this.tBar_CharSize.Value = 10;
+            this.tBar_CharSize.Value = 1;
             this.tBar_CharSize.Scroll += new System.EventHandler(this.tBar_CharSize_Scroll);
             // 
             // label1
@@ -167,8 +165,6 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -208,40 +204,9 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.webBrowser1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(783, 749);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(777, 743);
-            this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("", System.UriKind.Relative);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(783, 749);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(104, 170);
+            this.button1.Location = new System.Drawing.Point(104, 255);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 23);
             this.button1.TabIndex = 2;
@@ -526,6 +491,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.groupBox6);
             this.groupBox1.Controls.Add(this.cB_Compress);
@@ -538,10 +505,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "设置";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(38, 216);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(99, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "测试";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.label6);
-            this.groupBox6.Controls.Add(this.trackBar1);
+            this.groupBox6.Controls.Add(this.tb_CompressRate);
             this.groupBox6.Location = new System.Drawing.Point(8, 42);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(195, 71);
@@ -558,14 +535,16 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "95%";
             // 
-            // trackBar1
+            // tb_CompressRate
             // 
-            this.trackBar1.Location = new System.Drawing.Point(3, 20);
-            this.trackBar1.Maximum = 95;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(165, 45);
-            this.trackBar1.TabIndex = 4;
-            this.trackBar1.Value = 95;
+            this.tb_CompressRate.Location = new System.Drawing.Point(3, 20);
+            this.tb_CompressRate.Maximum = 95;
+            this.tb_CompressRate.Minimum = 1;
+            this.tb_CompressRate.Name = "tb_CompressRate";
+            this.tb_CompressRate.Size = new System.Drawing.Size(165, 45);
+            this.tb_CompressRate.TabIndex = 4;
+            this.tb_CompressRate.Value = 95;
+            this.tb_CompressRate.Scroll += new System.EventHandler(this.tb_CompressRate_Scroll);
             // 
             // cB_Compress
             // 
@@ -578,10 +557,13 @@
             this.cB_Compress.TabIndex = 3;
             this.cB_Compress.Text = "图像压缩";
             this.cB_Compress.UseVisualStyleBackColor = true;
+            this.cB_Compress.CheckedChanged += new System.EventHandler(this.cB_Compress_CheckedChanged);
             // 
             // cB_OpenFloder
             // 
             this.cB_OpenFloder.AutoSize = true;
+            this.cB_OpenFloder.Checked = true;
+            this.cB_OpenFloder.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cB_OpenFloder.Location = new System.Drawing.Point(8, 148);
             this.cB_OpenFloder.Name = "cB_OpenFloder";
             this.cB_OpenFloder.Size = new System.Drawing.Size(144, 16);
@@ -611,6 +593,18 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "转换进度";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(8, 170);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(48, 16);
+            this.checkBox1.TabIndex = 11;
+            this.checkBox1.Text = "水印";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -626,7 +620,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pB_CharGif)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -654,7 +647,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_CompressRate)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
@@ -674,9 +667,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pB_CharGif;
         private System.Windows.Forms.ProgressBar pB_HandleProgress;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox cB_FormShow;
@@ -704,7 +694,9 @@
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar tb_CompressRate;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
