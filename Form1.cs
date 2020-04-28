@@ -166,7 +166,7 @@ namespace Image2Char
             OpenFileDialog oi = new OpenFileDialog
             {
                 //oi.InitialDirectory = "c:\\";
-                Filter = "图片(*.jpg) | *.jpg;*.gif;*.bmp| 所有文件(*.*) | *.*",
+                Filter = "图片(*.jpg,*.jpeg,*.gif,*.bmp) | *.jpg;*.jpeg;*.gif;*.bmp| 所有文件(*.*) | *.*",
                 RestoreDirectory = true,
                 FilterIndex = 1
             };
@@ -180,26 +180,35 @@ namespace Image2Char
                 }
                 var filename = oi.FileName;
                 ImageName = Path.GetFileNameWithoutExtension(filename);
-                if (Path.GetExtension(filename).ToLower() == ".gif")
+                var Format = new string[] {".gif",".jpg",".bmp" };
+                if (Format.Contains(Path.GetExtension(filename).ToLower()))
                 {
-                    image = Image.FromFile(filename);
+                    try
+                    {
+                        image = Image.FromFile(filename);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("不正确的格式","错误的预期",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        return;
+                    }
                     pictureBox1.Image = image;
                     GetFrames(filename);
                     model = 2;
                 }
-                else
-                {
-                    image = Image.FromFile(filename);
-                    bitmap = new Bitmap(image);
-                    pictureBox1.Image = image;
-                    GetFrames(filename);
-                    model = 2;
-                }
+                
             }
         }
 
         private void bt_Change_Click(object sender, EventArgs e)
         {
+            if(image is null)
+                bt_SelectImage_Click(sender, e);
+            if (image is null)
+            {
+                MessageBox.Show("请选择一张图片进行转换");
+                return;
+            }
             ImageCompress = cB_Compress.Checked;
             btn_SelectImage.Enabled = false;
             if (!(td is null) && td.IsAlive)
@@ -315,9 +324,9 @@ namespace Image2Char
                 case 2://gif动态图
                     GetGifChar(WAddNum, HAddNum);
                     TextToBitmap();
-                    ImageToGif();
                     GenerateHtml();
                     GenerateHtmlChar();
+                    ImageToGif();
                     ShowMessage(100.00f);
                     OpenFloder();
                     ShowGifChar();
@@ -623,6 +632,12 @@ namespace Image2Char
         private void cB_Compress_CheckedChanged(object sender, EventArgs e)
         {
             tb_CompressRate.Enabled = cB_Compress.Checked;
+            if (!cB_Compress.Checked)
+            {
+                if (DialogResult.No == MessageBox.Show("不进行图像压缩处理过程会占用极高的内存且耗时较长,是否继续", "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                    cB_Compress.Checked = false;
+            }
+
         }
 
         private void cb_GeneGif_CheckedChanged(object sender, EventArgs e)
