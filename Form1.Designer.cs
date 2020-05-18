@@ -35,9 +35,9 @@
             this.tBar_CharSize = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pB_CharGif = new System.Windows.Forms.PictureBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.pB_HandleProgress = new System.Windows.Forms.ProgressBar();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -75,9 +75,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CharSize)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pB_CharGif)).BeginInit();
-            this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -178,6 +178,17 @@
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 9;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.tb_CharImage);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(782, 742);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "char";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.pB_CharGif);
@@ -198,17 +209,6 @@
             this.pB_CharGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pB_CharGif.TabIndex = 1;
             this.pB_CharGif.TabStop = false;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.tb_CharImage);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(782, 742);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "char";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -406,8 +406,6 @@
             // cB_BrowserShow
             // 
             this.cB_BrowserShow.AutoSize = true;
-            this.cB_BrowserShow.Checked = true;
-            this.cB_BrowserShow.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cB_BrowserShow.Location = new System.Drawing.Point(8, 42);
             this.cB_BrowserShow.Name = "cB_BrowserShow";
             this.cB_BrowserShow.Size = new System.Drawing.Size(96, 16);
@@ -499,7 +497,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(245, 380);
+            this.tabPage6.Size = new System.Drawing.Size(246, 380);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "设置";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -577,6 +575,7 @@
             // 
             // tb_CompressRate
             // 
+            this.tb_CompressRate.Enabled = false;
             this.tb_CompressRate.Location = new System.Drawing.Point(3, 20);
             this.tb_CompressRate.Maximum = 95;
             this.tb_CompressRate.Minimum = 1;
@@ -589,8 +588,6 @@
             // cB_Compress
             // 
             this.cB_Compress.AutoSize = true;
-            this.cB_Compress.Checked = true;
-            this.cB_Compress.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cB_Compress.Location = new System.Drawing.Point(8, 20);
             this.cB_Compress.Name = "cB_Compress";
             this.cB_Compress.Size = new System.Drawing.Size(72, 16);
@@ -602,8 +599,6 @@
             // cB_OpenFloder
             // 
             this.cB_OpenFloder.AutoSize = true;
-            this.cB_OpenFloder.Checked = true;
-            this.cB_OpenFloder.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cB_OpenFloder.Location = new System.Drawing.Point(8, 185);
             this.cB_OpenFloder.Name = "cB_OpenFloder";
             this.cB_OpenFloder.Size = new System.Drawing.Size(144, 16);
@@ -653,10 +648,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CharSize)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pB_CharGif)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pB_CharGif)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
