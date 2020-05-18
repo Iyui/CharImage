@@ -319,7 +319,7 @@ namespace Image2Char
                             byte[] fileBytes = new byte[byteLength];
                             fileStream.Read(fileBytes, 0, byteLength);
 
-                            //文件流关閉,文件解除锁定
+                            //文件流关闭,文件解除锁定
                             fileStream.Close();
 
                             Image image = Image.FromStream(new MemoryStream(fileBytes));
