@@ -13,6 +13,7 @@ namespace Image2Char
         FolderPath,
         FilePath,
         Error,
+        DeadlyError,
         Progress,
         ImageInfo,
         PrgressInfo,

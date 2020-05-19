@@ -100,13 +100,17 @@ namespace Image2Char
                     //tb_CharImage.Refresh();
                     break;
                 case MessageType.Error:
-
+                    lInfo.Text=e.Message;
+                    break;
+                case MessageType.DeadlyError:
+                    MessageBox.Show(e.Message, "致命错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case MessageType.Progress:
                     if (e.Progress >= 100)
                     {
                         pB_HandleProgress.Value = 100;
                         btn_SelectImage.Enabled = true;
+                        btn_Change.Enabled = true;
                         label1.Text = 100.ToString("0.000");
                     }
                     else
@@ -143,6 +147,7 @@ namespace Image2Char
 
         private void bt_Change_Click(object sender, EventArgs e)
         {
+            btn_Change.Enabled = false;
             if (!(ThreadImageToGif is null) && ThreadImageToGif.IsAlive)
                 ThreadImageToGif.Abort();
             if (!(ThreadImageToShow is null) && ThreadImageToShow.IsAlive)
@@ -288,11 +293,19 @@ namespace Image2Char
 
         private void GetGifChar(int w, int h)
         {
-            ShowInfo("正在解析GIF");
+            string info = "正在解析";
+            string info2 = "";
+            ShowInfo(info);
             int count = imageList.Count;
             float perProgress = ((100.0f - Progress) / count / 2);
             for (int i = 0; i < count; i++)
             {
+                if (i==0 || i % 10 == 0)
+                {
+                    info2 += ".";
+                    ShowInfo(info + info2);
+                }
+                if (info2.Length == 3) info2 = "";
                 Image watermark = imageList[i];
                 if (Watermark)//判断是否要打水印
                     watermark = MakeWatermark(watermark);
@@ -325,8 +338,16 @@ namespace Image2Char
                             break;
                         if (isPicShow)
                         {
-                            FileStream fileStream = new FileStream(ImagePath + i + ".jpg", FileMode.Open, FileAccess.Read);
-
+                            FileStream fileStream;
+                            try
+                            {
+                                fileStream = new FileStream(ImagePath + i + ".jpg", FileMode.Open, FileAccess.Read);
+                            }
+                            catch (Exception ex)
+                            {
+                                ShowMessage(ex.ToString(), MessageType.Error);
+                                continue;
+                            };
                             int byteLength = (int)fileStream.Length;
                             byte[] fileBytes = new byte[byteLength];
                             fileStream.Read(fileBytes, 0, byteLength);
@@ -492,14 +513,16 @@ namespace Image2Char
         /// </summary>
         private void TextToBitmap()
         {
-            ShowInfo("正在进行字符化处理");
+            var info = "正在进行字符化处理";
+            ShowInfo(info);
+            var info2 = "";
             int count = htGif.Count;
             float perProgress = ((100.0f - Progress) / count);
             //htCharToBmp = new Hashtable();
             var path = Application.StartupPath + "\\" + "resource" + "\\" + ImageName + "\\"+"image"+"\\";
             ImagePath = path;
             HtmlPath = Application.StartupPath + "\\" + "resource" + "\\" + ImageName;
-
+            
             if (!FloderExist(path))
             {
 
@@ -511,11 +534,20 @@ namespace Image2Char
                     continue;
                 path = ImagePath;
                 path += i + ".jpg";
-                
-                val.Save(path);
-                //htCharToBmp.Add(i, val);内存占用大，取消使用
+                try
+                {
+                    val.Save(path);
+
+                }
+                catch (Exception ex) { ShowMessage(ex.ToString(), MessageType.DeadlyError); }
                 val.Dispose();
                 GC.Collect();
+                if (i == 0 || i % 5 == 0)
+                {
+                    info2 += ".";
+                    ShowInfo(info + info2);
+                    if (info2.Length == 3) info2 = "";
+                }
                 ShowMessage(Progress + perProgress);
             }
         }
@@ -600,6 +632,7 @@ namespace Image2Char
             htmlClass.Create(ref error, ref htmlpath);
             if (isBroswerShow)
                 System.Diagnostics.Process.Start(htmlpath);
+            ShowInfo("处理已完成");
 
         }
 
