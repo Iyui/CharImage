@@ -34,7 +34,7 @@ namespace Watermarker
         /// <summary>
         /// 文本水印颜色
         /// </summary>
-        public Color TextColor { get; set; } = Color.White;
+        public Color TextColor { get; set; } = Color.Black;
 
         /// <summary>
         /// 水印文本旋转角度

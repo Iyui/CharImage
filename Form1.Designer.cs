@@ -62,7 +62,6 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cb_GeneGif = new System.Windows.Forms.CheckBox();
-            this.cb_WaterMark = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -70,6 +69,15 @@
             this.cB_Compress = new System.Windows.Forms.CheckBox();
             this.cB_OpenFloder = new System.Windows.Forms.CheckBox();
             this.cB_Parallel = new System.Windows.Forms.CheckBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cb_WaterMarkLocation = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cb_WaterMarkFont = new System.Windows.Forms.ComboBox();
+            this.cb_WaterMark = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -102,6 +110,8 @@
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_CompressRate)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,7 +132,7 @@
             this.tb_CharImage.Location = new System.Drawing.Point(3, 3);
             this.tb_CharImage.Multiline = true;
             this.tb_CharImage.Name = "tb_CharImage";
-            this.tb_CharImage.Size = new System.Drawing.Size(776, 736);
+            this.tb_CharImage.Size = new System.Drawing.Size(0, 736);
             this.tb_CharImage.TabIndex = 1;
             // 
             // btn_SelectImage
@@ -174,7 +184,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(790, 775);
+            this.tabControl1.Size = new System.Drawing.Size(0, 775);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 9;
             // 
@@ -184,7 +194,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(782, 742);
+            this.tabPage1.Size = new System.Drawing.Size(0, 742);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "char";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -195,7 +205,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(782, 742);
+            this.tabPage2.Size = new System.Drawing.Size(17, 742);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "image";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -205,7 +215,7 @@
             this.pB_CharGif.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pB_CharGif.Location = new System.Drawing.Point(3, 3);
             this.pB_CharGif.Name = "pB_CharGif";
-            this.pB_CharGif.Size = new System.Drawing.Size(776, 736);
+            this.pB_CharGif.Size = new System.Drawing.Size(11, 736);
             this.pB_CharGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pB_CharGif.TabIndex = 1;
             this.pB_CharGif.TabStop = false;
@@ -238,13 +248,14 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.tabControl1);
+            this.splitContainer1.Panel1MinSize = 0;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.btn_SelectImage);
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1048, 775);
-            this.splitContainer1.SplitterDistance = 790;
+            this.splitContainer1.Size = new System.Drawing.Size(257, 775);
+            this.splitContainer1.SplitterDistance = 0;
             this.splitContainer1.TabIndex = 10;
             // 
             // splitContainer2
@@ -262,7 +273,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(254, 775);
+            this.splitContainer2.Size = new System.Drawing.Size(255, 775);
             this.splitContainer2.SplitterDistance = 285;
             this.splitContainer2.TabIndex = 11;
             // 
@@ -280,7 +291,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.groupBox4);
-            this.splitContainer3.Size = new System.Drawing.Size(254, 486);
+            this.splitContainer3.Size = new System.Drawing.Size(255, 486);
             this.splitContainer3.SplitterDistance = 406;
             this.splitContainer3.TabIndex = 11;
             // 
@@ -288,11 +299,12 @@
             // 
             this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Controls.Add(this.tabPage6);
+            this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(254, 406);
+            this.tabControl2.Size = new System.Drawing.Size(255, 406);
             this.tabControl2.TabIndex = 10;
             // 
             // tabPage5
@@ -301,7 +313,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(246, 380);
+            this.tabPage5.Size = new System.Drawing.Size(247, 380);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "显示";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -321,7 +333,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(240, 374);
+            this.groupBox2.Size = new System.Drawing.Size(241, 374);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "显示";
@@ -436,14 +448,13 @@
             // cB_FormShow
             // 
             this.cB_FormShow.AutoSize = true;
-            this.cB_FormShow.Checked = true;
-            this.cB_FormShow.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cB_FormShow.Location = new System.Drawing.Point(8, 20);
             this.cB_FormShow.Name = "cB_FormShow";
             this.cB_FormShow.Size = new System.Drawing.Size(84, 16);
             this.cB_FormShow.TabIndex = 1;
             this.cB_FormShow.Text = "窗体中显示";
             this.cB_FormShow.UseVisualStyleBackColor = true;
+            this.cB_FormShow.CheckedChanged += new System.EventHandler(this.cB_FormShow_CheckedChanged);
             // 
             // nud_Height
             // 
@@ -497,7 +508,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(246, 380);
+            this.tabPage6.Size = new System.Drawing.Size(247, 380);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "设置";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -505,7 +516,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cb_GeneGif);
-            this.groupBox1.Controls.Add(this.cb_WaterMark);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.groupBox6);
@@ -532,22 +542,9 @@
             this.cb_GeneGif.UseVisualStyleBackColor = true;
             this.cb_GeneGif.CheckedChanged += new System.EventHandler(this.cb_GeneGif_CheckedChanged);
             // 
-            // cb_WaterMark
-            // 
-            this.cb_WaterMark.AutoSize = true;
-            this.cb_WaterMark.Checked = true;
-            this.cb_WaterMark.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_WaterMark.Location = new System.Drawing.Point(8, 141);
-            this.cb_WaterMark.Name = "cb_WaterMark";
-            this.cb_WaterMark.Size = new System.Drawing.Size(48, 16);
-            this.cb_WaterMark.TabIndex = 11;
-            this.cb_WaterMark.Text = "水印";
-            this.cb_WaterMark.UseVisualStyleBackColor = true;
-            this.cb_WaterMark.CheckedChanged += new System.EventHandler(this.cb_WaterMark_CheckedChanged);
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(38, 216);
+            this.button2.Location = new System.Drawing.Point(37, 194);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 23);
             this.button2.TabIndex = 10;
@@ -602,7 +599,7 @@
             // cB_OpenFloder
             // 
             this.cB_OpenFloder.AutoSize = true;
-            this.cB_OpenFloder.Location = new System.Drawing.Point(8, 185);
+            this.cB_OpenFloder.Location = new System.Drawing.Point(8, 163);
             this.cB_OpenFloder.Name = "cB_OpenFloder";
             this.cB_OpenFloder.Size = new System.Drawing.Size(144, 16);
             this.cB_OpenFloder.TabIndex = 2;
@@ -612,12 +609,117 @@
             // cB_Parallel
             // 
             this.cB_Parallel.AutoSize = true;
-            this.cB_Parallel.Location = new System.Drawing.Point(8, 163);
+            this.cB_Parallel.Location = new System.Drawing.Point(8, 141);
             this.cB_Parallel.Name = "cB_Parallel";
             this.cB_Parallel.Size = new System.Drawing.Size(150, 16);
             this.cB_Parallel.TabIndex = 0;
             this.cB_Parallel.Text = "并行处理（高CPU占用）";
             this.cB_Parallel.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox7);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(247, 380);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "水印设置";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label8);
+            this.groupBox7.Controls.Add(this.label7);
+            this.groupBox7.Controls.Add(this.label4);
+            this.groupBox7.Controls.Add(this.cb_WaterMarkLocation);
+            this.groupBox7.Controls.Add(this.textBox1);
+            this.groupBox7.Controls.Add(this.cb_WaterMarkFont);
+            this.groupBox7.Controls.Add(this.cb_WaterMark);
+            this.groupBox7.Location = new System.Drawing.Point(16, 15);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(209, 347);
+            this.groupBox7.TabIndex = 13;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "设置";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 131);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 12);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "水印位置";
+            this.label8.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 92);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 12);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "字体";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 52);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "水印文字";
+            // 
+            // cb_WaterMarkLocation
+            // 
+            this.cb_WaterMarkLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_WaterMarkLocation.FormattingEnabled = true;
+            this.cb_WaterMarkLocation.Items.AddRange(new object[] {
+            "左上角",
+            "中上",
+            "右上角",
+            "左中",
+            "居中",
+            "右中",
+            "左下角",
+            "中下",
+            "右下角"});
+            this.cb_WaterMarkLocation.Location = new System.Drawing.Point(74, 128);
+            this.cb_WaterMarkLocation.Name = "cb_WaterMarkLocation";
+            this.cb_WaterMarkLocation.Size = new System.Drawing.Size(121, 20);
+            this.cb_WaterMarkLocation.TabIndex = 15;
+            this.cb_WaterMarkLocation.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(74, 49);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(121, 21);
+            this.textBox1.TabIndex = 14;
+            this.textBox1.Text = "Iyui";
+            // 
+            // cb_WaterMarkFont
+            // 
+            this.cb_WaterMarkFont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_WaterMarkFont.FormattingEnabled = true;
+            this.cb_WaterMarkFont.Location = new System.Drawing.Point(74, 89);
+            this.cb_WaterMarkFont.Name = "cb_WaterMarkFont";
+            this.cb_WaterMarkFont.Size = new System.Drawing.Size(121, 20);
+            this.cb_WaterMarkFont.TabIndex = 13;
+            this.cb_WaterMarkFont.SelectedIndexChanged += new System.EventHandler(this.cb_WaterMarkFont_SelectedIndexChanged);
+            // 
+            // cb_WaterMark
+            // 
+            this.cb_WaterMark.AutoSize = true;
+            this.cb_WaterMark.Checked = true;
+            this.cb_WaterMark.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_WaterMark.Location = new System.Drawing.Point(17, 20);
+            this.cb_WaterMark.Name = "cb_WaterMark";
+            this.cb_WaterMark.Size = new System.Drawing.Size(48, 16);
+            this.cb_WaterMark.TabIndex = 12;
+            this.cb_WaterMark.Text = "水印";
+            this.cb_WaterMark.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -627,7 +729,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(254, 76);
+            this.groupBox4.Size = new System.Drawing.Size(255, 76);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "转换进度";
@@ -644,10 +746,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 775);
+            this.ClientSize = new System.Drawing.Size(257, 775);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "字符画";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBar_CharSize)).EndInit();
             this.tabControl1.ResumeLayout(false);
@@ -684,6 +787,9 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_CompressRate)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
@@ -732,9 +838,17 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TrackBar tb_CompressRate;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox cb_WaterMark;
         private System.Windows.Forms.Label lInfo;
         private System.Windows.Forms.CheckBox cb_GeneGif;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.CheckBox cb_WaterMark;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cb_WaterMarkLocation;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cb_WaterMarkFont;
     }
 }
 

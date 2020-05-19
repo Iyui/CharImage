@@ -65,8 +65,12 @@ namespace Image2Char
         public float TextFontSize { get => tBar_CharSize.Value; }
         public static int DisplaySpeed { set; get; }
         public static bool isGenerateGif { set; get; }
-
         public static bool Watermark { set; get; }
+
+        //水印
+        public static string WaterMarkText { set; get; }
+        public static string WaterMarkFont { set; get; }
+        public static string WaterMarkLocation { set; get; }
 
         public Form1()
         {
@@ -145,6 +149,7 @@ namespace Image2Char
             {
                 ThreadImageToShow.Abort();
             }
+            SetWaterMark();
             if (image is null)
                 bt_SelectImage_Click(sender, e);
             if (image is null)
@@ -710,8 +715,8 @@ namespace Image2Char
             WatermarkSettings wm = new WatermarkSettings
             {
                 WatermarkTextEnable = true,
-                WatermarkText = "Iyui",
-                WatermarkFont = "Ink Free",
+                WatermarkText = WaterMarkText,
+                WatermarkFont = WaterMarkFont,
             };
             WatermarkProcess wp = new WatermarkProcess();
             var WatermarkImage =  wp.MakeImageWatermark(sourceImage, wm);
@@ -721,6 +726,53 @@ namespace Image2Char
         private void cb_WaterMark_CheckedChanged(object sender, EventArgs e)
         {
             Watermark = cb_WaterMark.Checked;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            GetFontNames();
+
+            cB_FormShow_CheckedChanged(sender, e);
+        }
+
+        private void GetFontNames()
+        {
+            FontFamily[] fontFamilies;
+            cb_WaterMarkFont.Items.Clear();
+            System.Drawing.Text.InstalledFontCollection installedFontCollection = new System.Drawing.Text.InstalledFontCollection();
+            fontFamilies = installedFontCollection.Families;
+            int count = fontFamilies.Length;
+            for (int j = 0; j < count; ++j)
+            {
+                cb_WaterMarkFont.Items.Add(fontFamilies[j].Name);
+            }
+            cb_WaterMarkFont.SelectedIndex = 0;
+        }
+
+        private void SetWaterMark()
+        {
+            WaterMarkText = textBox1.Text;
+            WaterMarkFont = cb_WaterMarkFont.Text;
+            WaterMarkLocation = cb_WaterMarkLocation.Text ;
+        }
+
+        private void cb_WaterMarkFont_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox1.Font = new Font(cb_WaterMarkFont.Text, 9);
+        }
+
+        private void cB_FormShow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!cB_FormShow.Checked)
+            {
+                Width = 270;
+                splitContainer1.SplitterDistance = 0;
+            }
+            else
+            {
+                Width = 1070;
+                splitContainer1.SplitterDistance = 790;
+            }
         }
     }
 }
