@@ -62,7 +62,7 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cb_GeneGif = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cb_WaterMark = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -505,7 +505,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cb_GeneGif);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.cb_WaterMark);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.groupBox6);
@@ -532,15 +532,18 @@
             this.cb_GeneGif.UseVisualStyleBackColor = true;
             this.cb_GeneGif.CheckedChanged += new System.EventHandler(this.cb_GeneGif_CheckedChanged);
             // 
-            // checkBox1
+            // cb_WaterMark
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(8, 141);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(48, 16);
-            this.checkBox1.TabIndex = 11;
-            this.checkBox1.Text = "水印";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cb_WaterMark.AutoSize = true;
+            this.cb_WaterMark.Checked = true;
+            this.cb_WaterMark.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_WaterMark.Location = new System.Drawing.Point(8, 141);
+            this.cb_WaterMark.Name = "cb_WaterMark";
+            this.cb_WaterMark.Size = new System.Drawing.Size(48, 16);
+            this.cb_WaterMark.TabIndex = 11;
+            this.cb_WaterMark.Text = "水印";
+            this.cb_WaterMark.UseVisualStyleBackColor = true;
+            this.cb_WaterMark.CheckedChanged += new System.EventHandler(this.cb_WaterMark_CheckedChanged);
             // 
             // button2
             // 
@@ -729,7 +732,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TrackBar tb_CompressRate;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cb_WaterMark;
         private System.Windows.Forms.Label lInfo;
         private System.Windows.Forms.CheckBox cb_GeneGif;
     }

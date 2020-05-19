@@ -13,6 +13,7 @@ using System.Threading;
 using Gif.Components;
 using System.Drawing.Drawing2D;
 using LitJson;
+using Watermarker;
 namespace Image2Char
 {
     public partial class Form1 : Form
@@ -65,6 +66,8 @@ namespace Image2Char
         public static int DisplaySpeed { set; get; }
         public static bool isGenerateGif { set; get; }
 
+        public static bool Watermark { set; get; }
+
         public Form1()
         {
             InitializeComponent();
@@ -73,6 +76,7 @@ namespace Image2Char
 
             DisplaySpeed = (tBar_Speed.Maximum - tBar_Speed.Value + 1) * 50;
             isGenerateGif = cb_GeneGif.Checked;
+            Watermark = cb_WaterMark.Checked;
             //charshowCallBack = new CharShowCallBack(ShowGifChar);
             Config.messageClass.OnMessageSend += new MessageEventHandler(SubthreadMessageReceive);
         }
@@ -284,7 +288,10 @@ namespace Image2Char
             float perProgress = ((100.0f - Progress) / count / 2);
             for (int i = 0; i < count; i++)
             {
-                var bp = new Bitmap(imageList[i]);
+                Image watermark = imageList[i];
+                if (Watermark)//判断是否要打水印
+                    watermark = MakeWatermark(watermark);
+                var bp = new Bitmap(watermark);
                 var sb = ConvertToChar(bp, w, h);
                 htGif.Add(i, sb.ToString());
                 ShowMessage(Progress + perProgress);
@@ -523,7 +530,7 @@ namespace Image2Char
         }
 
         /// <summary>
-        /// 图片转GIF，速度极慢，可能是图片太大或者库本身的原因
+        /// 图片转GIF，图片太大会导致转换慢
         /// </summary>
         private void ImageToGif()
         {
@@ -698,6 +705,22 @@ namespace Image2Char
             isGenerateGif = cb_GeneGif.Checked;
         }
 
+        private Image MakeWatermark(Image sourceImage)
+        {
+            WatermarkSettings wm = new WatermarkSettings
+            {
+                WatermarkTextEnable = true,
+                WatermarkText = "Iyui",
+                WatermarkFont = "Ink Free",
+            };
+            WatermarkProcess wp = new WatermarkProcess();
+            var WatermarkImage =  wp.MakeImageWatermark(sourceImage, wm);
+            return WatermarkImage;
+        }
 
+        private void cb_WaterMark_CheckedChanged(object sender, EventArgs e)
+        {
+            Watermark = cb_WaterMark.Checked;
+        }
     }
 }
