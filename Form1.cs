@@ -147,6 +147,8 @@ namespace Image2Char
 
         private void bt_Change_Click(object sender, EventArgs e)
         {
+            if(!(htGif is null))
+                htGif.Clear();
             btn_Change.Enabled = false;
             if (!(ThreadImageToGif is null) && ThreadImageToGif.IsAlive)
                 ThreadImageToGif.Abort();
@@ -314,7 +316,7 @@ namespace Image2Char
                 htGif.Add(i, sb.ToString());
                 ShowMessage(Progress + perProgress);
             }
-            imageList.Clear();
+           // imageList.Clear();
         }
 
         private void ShowGifChar()

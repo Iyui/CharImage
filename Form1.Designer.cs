@@ -132,7 +132,7 @@
             this.tb_CharImage.Location = new System.Drawing.Point(3, 3);
             this.tb_CharImage.Multiline = true;
             this.tb_CharImage.Name = "tb_CharImage";
-            this.tb_CharImage.Size = new System.Drawing.Size(0, 736);
+            this.tb_CharImage.Size = new System.Drawing.Size(11, 736);
             this.tb_CharImage.TabIndex = 1;
             // 
             // btn_SelectImage
@@ -184,7 +184,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(0, 775);
+            this.tabControl1.Size = new System.Drawing.Size(25, 775);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 9;
             // 
@@ -194,7 +194,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(0, 742);
+            this.tabPage1.Size = new System.Drawing.Size(17, 742);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "char";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -255,7 +255,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.btn_SelectImage);
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(257, 775);
-            this.splitContainer1.SplitterDistance = 0;
+            this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 10;
             // 
             // splitContainer2
@@ -273,7 +273,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(255, 775);
+            this.splitContainer2.Size = new System.Drawing.Size(228, 775);
             this.splitContainer2.SplitterDistance = 285;
             this.splitContainer2.TabIndex = 11;
             // 
@@ -291,7 +291,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.groupBox4);
-            this.splitContainer3.Size = new System.Drawing.Size(255, 486);
+            this.splitContainer3.Size = new System.Drawing.Size(228, 486);
             this.splitContainer3.SplitterDistance = 406;
             this.splitContainer3.TabIndex = 11;
             // 
@@ -304,7 +304,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(255, 406);
+            this.tabControl2.Size = new System.Drawing.Size(228, 406);
             this.tabControl2.TabIndex = 10;
             // 
             // tabPage5
@@ -313,7 +313,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(247, 380);
+            this.tabPage5.Size = new System.Drawing.Size(220, 380);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "显示";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -333,7 +333,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(241, 374);
+            this.groupBox2.Size = new System.Drawing.Size(214, 374);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "显示";
@@ -622,7 +622,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(247, 380);
+            this.tabPage3.Size = new System.Drawing.Size(220, 380);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "水印设置";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -720,6 +720,7 @@
             this.cb_WaterMark.TabIndex = 12;
             this.cb_WaterMark.Text = "水印";
             this.cb_WaterMark.UseVisualStyleBackColor = true;
+            this.cb_WaterMark.CheckedChanged += new System.EventHandler(this.cb_WaterMark_CheckedChanged);
             // 
             // groupBox4
             // 
@@ -729,7 +730,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(255, 76);
+            this.groupBox4.Size = new System.Drawing.Size(228, 76);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "转换进度";
